@@ -1,40 +1,137 @@
-Electronics Retailer Case Study: KPI Analysis Challenge
+# 📊 Electronics Retailer Case Study: KPI Analysis Challenge
 
-You are a data analyst at a global electronics retailer with access to five key tables: Sales, Customers, Products, Stores, and Exchange Rates (per data dictionary). Analyze these datasets to compute KPIs and answer business questions. 
-​
+## 🧾 Overview
 
-Scenario
+You are a data analyst at a global electronics retailer with access to five key datasets:
 
-The company's leadership seeks insights from 2024 sales data to optimize operations amid economic pressures. Focus on recommended analyses: product types and customer locations, seasonal order/revenue patterns, average delivery time trends, and online vs. in-store AOV (Average Order Value) differences.
-​
+* Sales
+* Customers
+* Products
+* Stores
+* Exchange Rates
 
-Analysis Questions
-1. Monthly Revenue Trend
-Merge Sales, Products, Exchange Rates. Calculate total revenue USD by month (2024).
+The goal is to analyze these datasets and derive key business insights using KPI-driven analysis.
 
-2. Peak Month Analysis
-From Q1, identify top 3 revenue months. Calculate % of annual total.
+---
 
-3. Holiday Drivers
-For Q2 peak months, show top 3 product categories driving revenue.
+## 🎯 Scenario
 
-4. Delivery Performance
-Calculate overall avg delivery time across all orders.
+The company leadership is looking to gain insights from **2024 sales data** to optimize operations under economic pressure.
 
-5. Country Delivery Issues
-Avg delivery time by store country. Show slowest 5 countries.
+Focus areas include:
 
-6. Channel Performance
-AOV (revenue/orders) by Online vs In-Store across continents (Online = StoreKey.isna()).
+* Product performance
+* Customer demographics and geography
+* Seasonal revenue trends
+* Delivery performance
+* Channel (Online vs In-Store) comparison
 
-7. Volume Leaders
-Top 5 product categories by total units sold.
+---
 
-8. Revenue Leaders
-Top 5 product categories by total revenue USD.
+## 📌 Analysis Questions
 
-9. Customer Profile
-Customer count and spending by Continent × Gender.
+### 1️⃣ Monthly Revenue Trend
 
-10. Customer Loyalty
-Repeat customer rate (% with 2+ orders) by continent.
+Merge **Sales, Products, and Exchange Rates** to calculate total revenue (USD) by month for 2024.
+
+---
+
+### 2️⃣ Peak Month Analysis
+
+From Q1 results:
+
+* Identify **Top 3 revenue months**
+* Calculate their **% contribution to total annual revenue**
+
+---
+
+### 3️⃣ Holiday Drivers
+
+For the peak months identified in Q2:
+
+* Find **Top 3 product categories**
+* Based on **revenue contribution**
+
+---
+
+### 4️⃣ Delivery Performance
+
+Calculate the **average delivery time** across all orders.
+
+---
+
+### 5️⃣ Country Delivery Issues
+
+* Compute **average delivery time by store country**
+* Identify **Top 5 slowest countries**
+
+---
+
+### 6️⃣ Channel Performance
+
+Calculate **Average Order Value (AOV)**:
+
+* Compare **Online vs In-Store**
+* Across different **continents**
+
+> Online = `store_key IS NULL` or `store_key = -1`
+
+---
+
+### 7️⃣ Volume Leaders
+
+Identify **Top 5 product categories** by:
+
+* Total **units sold**
+
+---
+
+### 8️⃣ Revenue Leaders
+
+Identify **Top 5 product categories** by:
+
+* Total **revenue (USD)**
+
+---
+
+### 9️⃣ Customer Profile
+
+Analyze customer distribution and spending:
+
+* By **Continent × Gender**
+* Metrics:
+
+  * Customer count
+  * Total spending
+
+---
+
+### 🔟 Customer Loyalty
+
+Calculate **repeat customer rate**:
+
+* % of customers with **2 or more orders**
+* Segmented by **continent**
+
+---
+
+## 🧠 Key Objectives
+
+* Build a **data pipeline (Bronze → Silver → Gold)**
+* Perform **KPI-driven analysis**
+* Design a **star schema for analytics**
+* Generate **business insights from structured data**
+
+---
+
+## 🚀 Outcome
+
+This analysis helps the business:
+
+* Understand revenue trends
+* Identify top-performing products
+* Improve delivery operations
+* Compare sales channels
+* Enhance customer targeting strategies
+
+---
