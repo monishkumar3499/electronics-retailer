@@ -1,0 +1,33 @@
+resources:
+  jobs:
+    New_Job_Mar_26_2026_10_43_PM:
+      name: New Job Mar 26, 2026, 10:43 PM
+      description: Built and scheduled a Databricks job to automate data ingestion,
+        transformation, and modeling across Bronze, Silver, and Gold layers
+      email_notifications:
+        on_failure:
+          - monish12005@gmail.com
+      trigger:
+        pause_status: PAUSED
+        file_arrival:
+          url: s3://db-ingestion-data/datasets/
+      tasks:
+        - task_key: bronze_layer
+          notebook_task:
+            notebook_path: /Workspace/Users/monishkumar3499@gmail.com/electronics-retailer/01_prod_bronze/notebooks/data-ingestion
+            source: WORKSPACE
+        - task_key: silver_layer
+          depends_on:
+            - task_key: bronze_layer
+          notebook_task:
+            notebook_path: /Workspace/Users/monishkumar3499@gmail.com/electronics-retailer/02_prod_silver/notebooks/data-transform
+            source: WORKSPACE
+        - task_key: gold_layer
+          depends_on:
+            - task_key: silver_layer
+          notebook_task:
+            notebook_path: /Workspace/Users/monishkumar3499@gmail.com/electronics-retailer/03_prod_gold/notebooks/models
+            source: WORKSPACE
+      queue:
+        enabled: true
+      performance_target: PERFORMANCE_OPTIMIZED
