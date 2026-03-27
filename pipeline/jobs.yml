@@ -28,6 +28,12 @@ resources:
           notebook_task:
             notebook_path: /Workspace/Users/monishkumar3499@gmail.com/electronics-retailer/03_prod_gold/notebooks/models
             source: WORKSPACE
+        - task_key: KPI_analysis
+          depends_on:
+            - task_key: gold_layer
+          notebook_task:
+            notebook_path: /Workspace/Users/monishkumar3499@gmail.com/electronics-retailer/03_prod_gold/notebooks/KPI
+            source: WORKSPACE
       queue:
         enabled: true
       performance_target: PERFORMANCE_OPTIMIZED
